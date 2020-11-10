@@ -1,0 +1,15 @@
+azure:
+  activedirectory:
+    tenant-id: <tenant-id>
+    client-id: <client-id>
+    client-secret: <client-secret>
+    authorization:
+      graph:
+        scope:
+          - "Calendars.Read"
+      arm:
+        scope:
+          - "https://management.core.windows.net/user_impersonation"
+spring:
+  profiles:
+    active: develop
