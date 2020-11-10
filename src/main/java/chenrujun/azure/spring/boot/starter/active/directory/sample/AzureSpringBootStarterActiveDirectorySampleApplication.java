@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class AzureSpringBootStarterActiveDirectorySampleApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AzureSpringBootStarterActiveDirectorySampleApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AzureSpringBootStarterActiveDirectorySampleApplication.class, args);
+    }
 
 }
