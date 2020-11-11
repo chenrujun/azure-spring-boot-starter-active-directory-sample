@@ -10,6 +10,11 @@ azure:
       arm:
         scope:
           - "https://management.core.windows.net/user_impersonation"
+server:
+  port: 8080
+  servlet:
+    session:
+      timeout: 36000000
 spring:
   profiles:
     active: develop
