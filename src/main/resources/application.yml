@@ -1,3 +1,11 @@
+logging:
+  level:
+    root: INFO
+    com:
+      azure:
+        spring:
+          aad:
+            implementation: DEBUG
 azure:
   activedirectory:
     tenant-id: <tenant-id>
@@ -5,11 +13,14 @@ azure:
     client-secret: <client-secret>
     authorization:
       graph:
-        scope:
-          - "Calendars.Read"
+        scopes:
+          - "https://graph.microsoft.com/Calendars.Read"
       arm:
-        scope:
+        scopes:
           - "https://management.core.windows.net/user_impersonation"
+    user-group:
+      value: "#microsoft.graph.group"
+      allowed-groups: group1, group2
 server:
   port: 8080
   servlet:
