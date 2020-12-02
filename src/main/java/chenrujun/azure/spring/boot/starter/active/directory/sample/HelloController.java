@@ -20,6 +20,14 @@ public class HelloController {
         return "home";
     }
 
+    @GetMapping("/client/azure")
+    public String azure(
+        @RegisteredOAuth2AuthorizedClient("azure") OAuth2AuthorizedClient oAuth2AuthorizedClient
+    ) {
+        logAuthorizedClient(oAuth2AuthorizedClient);
+        return "azure";
+    }
+
     @GetMapping("/client/graph")
     public String graph(
         @RegisteredOAuth2AuthorizedClient("graph") OAuth2AuthorizedClient oAuth2AuthorizedClient
