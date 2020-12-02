@@ -15,22 +15,33 @@ import java.util.Optional;
 public class HelloController {
     private static final Logger LOGGER = LoggerFactory.getLogger(HelloController.class);
 
-    @GetMapping("/graph")
+    @GetMapping("/home")
+    public String home() {
+        return "home";
+    }
+
+    @GetMapping("/client/graph")
     public String graph(
         @RegisteredOAuth2AuthorizedClient("graph") OAuth2AuthorizedClient oAuth2AuthorizedClient
     ) {
         logAuthorizedClient(oAuth2AuthorizedClient);
         return "graph";
-
     }
 
-    @GetMapping("/arm")
+    @GetMapping("/client/office")
+    public String office(
+        @RegisteredOAuth2AuthorizedClient("office") OAuth2AuthorizedClient oAuth2AuthorizedClient
+    ) {
+        logAuthorizedClient(oAuth2AuthorizedClient);
+        return "office";
+    }
+
+    @GetMapping("/client/arm")
     public String arm(
         @RegisteredOAuth2AuthorizedClient("arm") OAuth2AuthorizedClient oAuth2AuthorizedClient
     ) {
         logAuthorizedClient(oAuth2AuthorizedClient);
         return "arm";
-
     }
 
     static void logAuthorizedClient(OAuth2AuthorizedClient authorizedClient) {
