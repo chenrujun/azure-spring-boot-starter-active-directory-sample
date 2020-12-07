@@ -1,6 +1,6 @@
 package chenrujun.azure.spring.boot.starter.active.directory.sample;
 
-import com.azure.spring.aad.implementation.AzureOAuth2Configuration;
+import com.azure.spring.aad.webapp.AzureOAuth2Configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
