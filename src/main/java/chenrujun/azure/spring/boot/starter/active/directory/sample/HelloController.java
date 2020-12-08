@@ -6,6 +6,7 @@ import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.annotation.RegisteredOAuth2AuthorizedClient;
 import org.springframework.security.oauth2.client.registration.ClientRegistration;
 import org.springframework.security.oauth2.core.AbstractOAuth2Token;
+import org.springframework.security.oauth2.core.OAuth2AccessToken;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -91,6 +92,13 @@ public class HelloController {
                     .map(OAuth2AuthorizedClient::getRefreshToken)
                     .map(AbstractOAuth2Token::getExpiresAt)
                     .orElse(null)
+        );
+        LOGGER.info(
+            "scopesFromAccessToken = {}",
+            Optional.of(authorizedClient)
+                .map(OAuth2AuthorizedClient::getAccessToken)
+                .map(OAuth2AccessToken::getScopes)
+                .orElse(null)
         );
     }
 }
